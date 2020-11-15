@@ -1,30 +1,38 @@
 {% extends '_templates/base.njk' %}
 
-{% block page_title %}Index page title{% endblock %}
+{% block page_title %}Home{% endblock %}
 
-{% block page_description %}The index search description for this page goes here.{% endblock %}
+{% block page_description %}Home page.{% endblock %}
 
 {% block content %}
 <div class="container">
-  <h1>Main headline here</h1>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in facilisis velit, aliquam congue dui. Mauris id mi quam. Nam enim leo, bibendum vel efficitur id, elementum malesuada est. Pellentesque interdum tempus eros nec iaculis. Quisque ac est dictum, vehicula nulla quis, condimentum dui.</p>
-  <h2>Library books loop</h2>
-  <p>This loops through data that came from a Google Docs example.</p>
+  <h1>Queen</h1>
+  <p>This website is information about to the band Queen, an appreciation of their music, and a one stop shop for fans.</p>
+  <h2>Members</h2>
+  <p>Click each band member's name to learn more.</p>
   <div class="row">
-    {% for book in library.books %}
-      <div class="col">
-        <img src="img/{{ book.slug }}.jpg" alt="" class="img-fluid">
-        <h3><a href="books/{{ book.slug }}.html">{{ book.title }}</a></h3>
+    {% for name in members.members %}
+    <div class="col-sm-6 col-md-3">
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5 class="card-title">{{ name.name }}</h5>
+          <p class="card-text">{{ name.instruments }}</p>
+          <a href="#" class="btn btn-primary" target="_blank">Read more</a>
+        </div>
       </div>
+    </div>
     {% endfor %}
   </div>
-  <h2>Bookstores loop</h2>
+  <h2>Albums</h2>
   <p>This loops through data that came from a Google Sheet example.</p>
-  <hr>
-  {% for store in bookstores.stores %}
-    <h3><a href="{{ store.url }}" target="_blank">{{ store.name }}</a></h3>
-    <p>{{ store.address}}, {{ store.city }}, {{ store.state }} {{ store.zip }}</p>
-    <hr>
+<div class="container">
+  <div class="row">
+    {% for title in members.discography %}
+    <div class="col-sm-6 col-md-4">
+    <h3><a href="{{ discography.title }}" target="_blank">{{ members.title }}</a></h3>
+    <p>{{ title.year}}, {{ title.image }}</p>
+    </div>
+  </div>
   {% endfor %}
 </div>
 {% endblock %}
