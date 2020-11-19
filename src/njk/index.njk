@@ -6,33 +6,33 @@
 
 {% block content %}
 <div class="container">
-  <h1>Queen</h1>
-  <p>This website is information about to the band Queen, an appreciation of their music, and a one stop shop for fans.</p>
+  <h6>This website is information about the band Queen, an appreciation of their music, and a one stop shop for fans.</h6>
   <h2>Members</h2>
-  <p>Click each band member's name to learn more.</p>
+  <p class="directions">Click each band member's name to learn more.</p>
   <div class="row">
     {% for name in members.members %}
     <div class="col-sm-6 col-md-3">
       <div class="card mb-4">
         <div class="card-body">
           <h5 class="card-title">{{ name.name }}</h5>
-          <p class="card-text">{{ name.instruments }}</p>
-          <a href="#" class="btn btn-primary" target="_blank">Read more</a>
+          <img class="img-fluid" src="img/members/{{name.imagebw}}">
+          <a href="{{ relative_path }}members/{{name.slug}}.html" class="btn btn-primary" target="_blank">Read more</a>
         </div>
       </div>
     </div>
     {% endfor %}
   </div>
   <h2>Albums</h2>
-  <p>This loops through data that came from a Google Sheet example.</p>
 <div class="container">
   <div class="row">
     {% for title in members.discography %}
-    <div class="col-sm-6 col-md-4">
-    <h3><a href="{{ discography.title }}" target="_blank">{{ members.title }}</a></h3>
-    <p>{{ title.year}}, {{ title.image }}</p>
+    <div class="col-sm-6 col-lg-3">
+      <h3>{{ title.title }}</h3>
+      <p>{{ title.year}}</p>
+      <img class="img-fluid" src="img/discs/{{title.image}}">
+      <hr>
     </div>
+    {% endfor %}
   </div>
-  {% endfor %}
 </div>
 {% endblock %}

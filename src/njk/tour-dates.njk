@@ -1,0 +1,25 @@
+{% extends '_templates/base.njk' %}
+
+{% block content %}
+<article class="container">
+  <h1>2020 Tour Dates</h1>
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Date</th>
+        <th scope="col">City</th>
+        <th scope="col">Venue</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for tour in members.tour2021 %}
+      <tr>
+        <td>{{ tour.date }}</td>
+        <td>{{ tour.city }}</td>
+        <td>{{ tour.venue }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</article>
+{% endblock %}
