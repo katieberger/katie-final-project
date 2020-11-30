@@ -8,9 +8,19 @@ h6 {
 }
 
 h2 {
+  font-family: 'New Rocker', cursive;
   margin-bottom: 1rem;
+  font-size: 45px;
 }
 
 .directions {
   text-align: center;
+}
+
+.btn {
+  margin-top: 1rem;
+}
+
+.card-title {
+  color: $primary;
 }

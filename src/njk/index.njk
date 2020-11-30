@@ -13,7 +13,7 @@
     {% for name in members.members %}
     <div class="col-sm-6 col-md-3">
       <div class="card mb-4">
-        <div class="card-body">
+        <div class="card-body text-center">
           <h5 class="card-title">{{ name.name }}</h5>
           <img class="img-fluid" src="img/members/{{name.imagebw}}">
           <a href="{{ relative_path }}members/{{name.slug}}.html" class="btn btn-primary" target="_blank">Read more</a>
@@ -24,15 +24,6 @@
   </div>
   <h2>Albums</h2>
 <div class="container">
-  <div class="row">
-    {% for title in members.discography %}
-    <div class="col-sm-6 col-lg-3">
-      <h3>{{ title.title }}</h3>
-      <p>{{ title.year}}</p>
-      <img class="img-fluid" src="img/discs/{{title.image}}">
-      <hr>
-    </div>
-    {% endfor %}
-  </div>
+  {% include "_includes/albums.njk" %}
 </div>
 {% endblock %}

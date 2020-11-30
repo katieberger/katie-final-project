@@ -2,12 +2,14 @@
 <html lang="en">
   <!-- A Intro to Coding for Journalists class project -->
   <head>
-    <title>Queen</title>
-    <meta name="description" content="Default description">
+    <title>Tour Dates</title>
+    <meta name="description" content="Table of 2021 tour dates.">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=New+Rocker&display=swap" rel="stylesheet">
   </head>
   <body>
     <nav class="navbar navbar-expand-lg">
@@ -41,16 +43,14 @@
 </nav>
 
     <div class="jumbotron banner text-center">
-  <h1>Queen</h1>
+  <h1 id="jumbotron-title">Queen</h1>
   <p>The greatest band of all time.</p>
 </div>
 
-<!-- Maybe do a carousel for additional bootstrap thing? -->
-
     
 <article class="container">
-  <h1>2020 Tour Dates</h1>
-  <table class="table">
+  <h1>2021 Tour Dates</h1>
+  <table id="tour" class="table table-hover">
     <thead class="thead-light">
       <tr>
         <th scope="col">Date</th>
@@ -224,6 +224,11 @@
       
     </tbody>
   </table>
+  <script>
+      $(document).ready( function () {
+      $('#tour').DataTable();
+      } );
+  </script>
 </article>
 
 

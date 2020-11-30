@@ -1,14 +1,15 @@
 .jumbotron.banner {
   background: url(../img/queen-live-on-stage.jpg) no-repeat center;
   background-size: cover;
-  color: white;
   padding-top: 15rem
 }
 
 .jumbotron {
   margin-bottom: 30px;
   margin-top: auto;
-  h1 {font-family: 'New Rocker', cursive;
-    font-size: 70px;
+  color: white;
+  #jumbotron-title {font-family: 'New Rocker' cursive;
+    font-size: 90px;
+    color: white;
   }
 }

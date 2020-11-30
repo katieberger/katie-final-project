@@ -1,9 +1,16 @@
 {% extends '_templates/base.njk' %}
 
+{% block page_title %}Tour Dates{% endblock %}
+
+{% block page_description %}Table of 2021 tour dates.{% endblock %}
+
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.js"></script>
+
 {% block content %}
 <article class="container">
-  <h1>2020 Tour Dates</h1>
-  <table class="table">
+  <h1>2021 Tour Dates</h1>
+  <table id="tour" class="table table-hover">
     <thead class="thead-light">
       <tr>
         <th scope="col">Date</th>
@@ -21,5 +28,10 @@
       {% endfor %}
     </tbody>
   </table>
+  <script>
+      $(document).ready( function () {
+      $('#tour').DataTable();
+      } );
+  </script>
 </article>
 {% endblock %}
