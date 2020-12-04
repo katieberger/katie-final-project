@@ -1,6 +1,6 @@
 {% extends '_templates/base.njk' %}
 
-{% block page_title %}Home{% endblock %}
+{% block page_title %}Queen: Home{% endblock %}
 
 {% block page_description %}Home page.{% endblock %}
 
@@ -8,7 +8,6 @@
 <div class="container">
   <h6>This website is information about the band Queen, an appreciation of their music, and a one stop shop for fans.</h6>
   <h2>Members</h2>
-  <p class="directions">Click each band member's name to learn more.</p>
   <div class="row">
     {% for name in members.members %}
     <div class="col-sm-6 col-md-3">
